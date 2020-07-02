@@ -1,0 +1,10 @@
+Install and Configure GitLab
+$ sudo yum install curl policycoreutils-python openssh-server
+$ sudo yum install postfix
+$ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
+$ sudo yum install gitlab-ce
+$ sudo vim /etc/gitlab/gitlab.rb
+external_url 'https://gitlab.networkin9.com'
+letsencrypt['enable'] = true
+letsencrypt['contact_emails'] = ['admin@networkin9.com']
+$ sudo gitlab-ctl reconfigure
